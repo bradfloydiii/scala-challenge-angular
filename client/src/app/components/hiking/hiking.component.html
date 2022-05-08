@@ -1,10 +1,42 @@
 <div class="col">
-  <section>Hiking Challenge</section>
-  <section>Hiking Results</section>
-  <div class="row row flex-row align-items-center">
-    <div class="col">Add Hiker</div>
-    <div class="col">Add Bridge</div>
-  </div>
-</div>
+  <h2>Hiking Challenge</h2>
+  <section>
+    <div class="row">
+      <div class="col" *ngFor="let result of service.hikingResults">
+        <strong>Bridge {{ result.id }}</strong>
+        <div class="col">
+          bridge length: {{ result.bridgeLength }} ft.,<br />
+          number of hikers: {{ result.numHikers }},<br />
+          hiker ids: {{ result.hikerIds.toString() }},<br />
+          total bridge time:
+          <strong>{{ result.totalBridgeTime }} minute(s)</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<button type="button" class="btn btn-primary gap-3">Button</button>
+  <section>
+    <div class="row">
+      <div class="col">
+        <p><strong>Hikers</strong></p>
+        <div class="col" *ngFor="let hiker of service.hikers">
+          <span>id: {{ hiker._id }}, speed: {{ hiker.speed }}</span>
+        </div>
+      </div>
+      <div class="col">
+        <p><strong>Bridges</strong></p>
+        <div class="col" *ngFor="let bridge of service.bridges">
+          <span>id: {{ bridge._id }}, length: {{ bridge.length }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p>
+      <button class="btn btn-primary" (click)="calculateAllData()">
+        Calculate Hiking Data
+      </button>
+    </p>
+  </section>
+</div>
