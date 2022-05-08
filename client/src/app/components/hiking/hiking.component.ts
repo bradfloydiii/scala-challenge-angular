@@ -27,12 +27,12 @@ export class HikingComponent implements OnInit {
         console.log('error: ', error);
       },
       () => {
-        console.log(
-          'hikers',
-          this.service.hikers,
-          'bridges',
-          this.service.bridges
-        );
+        // console.log(
+        //   'hikers',
+        //   this.service.hikers,
+        //   'bridges',
+        //   this.service.bridges
+        // );
       }
     );
 

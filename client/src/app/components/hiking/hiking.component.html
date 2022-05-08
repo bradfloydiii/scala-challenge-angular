@@ -20,13 +20,13 @@
       <div class="col">
         <p><strong>Hikers</strong></p>
         <div class="col" *ngFor="let hiker of service.hikers">
-          <span>id: {{ hiker._id }}, speed: {{ hiker.speed }}</span>
+          <span>id: {{ hiker._id }}, speed: {{ hiker.speed }} ft./minute</span>
         </div>
       </div>
       <div class="col">
         <p><strong>Bridges</strong></p>
         <div class="col" *ngFor="let bridge of service.bridges">
-          <span>id: {{ bridge._id }}, length: {{ bridge.length }}</span>
+          <span>id: {{ bridge._id }}, length: {{ bridge.length }} ft., number of hikers: {{ bridge.numHikers }}</span>
         </div>
       </div>
     </div>

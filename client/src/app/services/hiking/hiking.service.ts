@@ -13,6 +13,7 @@ import { baseURL } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class HikingService {
+
   _hikers: IHiker[] | undefined;
   _bridges: IBridge[] | undefined;
   _results: IHikingResult[] | undefined;
@@ -85,7 +86,6 @@ export class HikingService {
     return hikeResult;
   }
 
-  // hikers
   get hikers(): IHiker[] {
     if (this._hikers) return this._hikers;
     return [];
@@ -95,7 +95,6 @@ export class HikingService {
     this._hikers = [...data];
   }
 
-  // bridges
   get bridges(): IBridge[] {
     if (this._bridges) return this._bridges;
     return [];
@@ -105,7 +104,6 @@ export class HikingService {
     this._bridges = [...data];
   }
 
-  // hiking results
   get hikingResults(): IHikingResult[] {
     if (this._results) return this._results;
     return [];
